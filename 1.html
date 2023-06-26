@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="zn-Hant-TW">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        color: #fff;
+        font-family: "nunito Semibold";
+        text-align: center;
+      }
+      #content {
+        max-width: 960px;
+        margin: 0 auto;
+        display: grid;
+
+        /* 設定每行columns的寬度 */
+        /* grid-template-columns: 200px 300px 460px; */
+
+        /* 設定每行columns的寬度，fr為剩餘空間的比例分配 */
+        /* grid-template-columns: 1fr 1fr 1fr 1fr; */
+
+        /* 設定共3行columns的數量，每行的寬度為 1/3 */
+        /* grid-template-columns: repeat(3, 1fr); */
+
+        /* 設定每一層的row高度為200px，若有該層內容物超過200px，其高度為auto */
+        /* grid-auto-rows:minmax(200px, auto); */
+
+        /* 設定共3層的row高度為200px */
+        /* grid-template-rows: repeat(3,200px); */
+
+        /* 設定共3層的row高度為200px，若內容物超過200px(auto為最大高度)，其餘行數都是200px */
+        /* grid-template-rows: repeat(3, minmax(200px, auto)); */
+
+        /* grid-gap: 10px; */
+        /* grid-column-gap: 10px; grid-row-gap: 10px; */
+
+        grid-template-columns: repeat(6, 1fr);
+        grid-template-rows: repeat(4, minmax(150px, auto));
+        grid-gap: 10px;
+      }
+      #content div {
+        background: #3bbced;
+        padding: 30px;
+      }
+      #content div:nth-child(even) {
+        background: #777;
+      }
+      .one {
+        /* grid-column-start: 1;grid-column-end: 3; */
+        grid-column: 1/3;
+      }
+      .two {
+        /* grid-column: 1/3; */
+        grid-column: 3/7;
+      }
+      .three {
+        grid-column: 2/5;
+        grid-row: 2/5;
+        /* grid-row: 1/4; */
+      }
+      .four{
+        grid-column: 1/3;
+        grid-row: 4;
+      }
+      .five{
+        grid-row: 2/3;
+      }
+      .six {
+        grid-row: 3;
+        grid-column: 4 / 6;
+      }
+      
+    </style>
+  </head>
+  <body>
+    <div id="content">
+      <div class="one">1</div>
+      <div class="two">2</div>
+      <div class="three">3</div>
+      <div class="four">4</div>
+      <div class="five">5</div>
+      <div class="six">6</div>
+      <!-- <div>7</div>
+      <div>8</div>
+      <div>9</div> -->
+    </div>
+  </body>
+</html>
